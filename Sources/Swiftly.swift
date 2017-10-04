@@ -18,6 +18,10 @@ public final class Swiftly {
     }
     
     public func define(_ name: String, block: @escaping RequestResponseBlock) {
+        guard self.functions[name] == nil else {
+            fatalError("Function already defined: \(name)")
+        }
+        
         self.functions[name] = block
     }
     
