@@ -4,7 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "Swiftly",
-    products: [],
+    products: [
+        .library(name: "Swiftly", targets: ["App"])
+    ],
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", from: "2.3.0")
     ],
