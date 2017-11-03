@@ -68,6 +68,10 @@ public final class Swiftly {
     }
     
     public func run() throws {
+        self.drop.get("health") { req in
+            return Response(status: .ok)
+        }
+        
         self.drop.group("functions") { (functions) in
             functions.post(String.parameter) { (req) -> ResponseRepresentable in
                 return try self.performFunction(req)
